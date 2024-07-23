@@ -1,16 +1,14 @@
-import { Type } from "lucide-react-native"
 import { api } from "./api"
 
-export type TripeDetails = {
-  id: String
-  destination: String
-  start_at: String
-  ends_at: String
+export type TripDetails = {
+  id: string;
+  destination: string;
+  starts_at: string;
+  ends_at: string;
   is_confirmed: boolean
-
 }
 
-type TripCreate = Omit<TripeDetails, "id" | "is_confirmed"> & {
+type TripCreate = Omit<TripDetails, "id" | "is_confirmed"> & {
 
   emails_to_invite: String[]
 
@@ -18,7 +16,7 @@ type TripCreate = Omit<TripeDetails, "id" | "is_confirmed"> & {
 
 async function getById(id: String) {
   try {
-    const { data } = await api.get<{ trip: TripeDetails }>(`/trips/${id}`)
+    const { data } = await api.get<{ trip: TripDetails }>(`/trips/${id}`)
     return data.trip
   } catch {
     throw new MediaError;
@@ -28,15 +26,15 @@ async function getById(id: String) {
 
 async function create({
   destination,
-  start_at,
+  starts_at,
   ends_at,
   emails_to_invite,
  
 }: TripCreate) {
   try {
-    const { data } = await api.post< {tripId: String}>("/trips", {
+    const { data } = await api.post< {tripId: string}>("/trips", {
       destination,
-      start_at,
+      starts_at,
       ends_at,
       emails_to_invite,
       owner_name: "Rodrigo Teixeira",
