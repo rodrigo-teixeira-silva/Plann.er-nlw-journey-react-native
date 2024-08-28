@@ -9,7 +9,8 @@ Aplicação de planejamente de viagens.
 
  **</>Codelink**.
 
-Aplicação utilizando framework react native na pratica, com telas de nove viagem, detalhes da viagem, tela de aceitar convite e tele de atividades.
+Aplicação utilizando framework react native na pratica, roteiro de viagens onde você pode definir a data da partida local e adicionar participantes e guia de atividades definidas por dia aplicação tem 
+telas de nova viagem, detalhes da viagem, tela de aceitar convite e tele de atividades.
 
 
 ## Layout mobile - Figma 
